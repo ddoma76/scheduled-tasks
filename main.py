@@ -65,9 +65,9 @@ def get_weather_meteo(city):
 
 
 def get_weather_openweathermap(city):
-#https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=f489f1e802cce582d5c27a29bd3911cf
+#https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=xx
     params = {
-        'appid':'f489f1e802cce582d5c27a29bd3911cf',
+        'appid':'xx',
         'q':city,
         'units':'metric',
         'cnt':4
