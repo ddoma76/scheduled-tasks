@@ -39,8 +39,8 @@ def send_message(client, message_txt, phone_to):
   )
   print(message.sid)
 
-client = get_client_without_verify()
-send_message(client, 'Ahoy', phone_no)
+#client = get_client_without_verify()
+#send_message(client, 'Ahoy', phone_no)
 
 
 #https://console.twilio.com/
