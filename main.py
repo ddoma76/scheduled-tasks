@@ -8,6 +8,9 @@
 import requests
 import pandas as pd
 
+import os
+api_key = os.environ.get("OWM_API_KEY")
+
 def get_coordinates(city):
     url = f"http://geocoding-api.open-meteo.com/v1/search?name={city}&count=1"
     response = requests.get(url).json()
@@ -65,9 +68,9 @@ def get_weather_meteo(city):
 
 
 def get_weather_openweathermap(city):
-#https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=xx
+#https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=api_key
     params = {
-        'appid':'xx',
+        'appid':api_key,
         'q':city,
         'units':'metric',
         'cnt':4
