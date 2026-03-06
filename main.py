@@ -1,5 +1,5 @@
 #https://api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&current_weather=true
-#OR https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=f489f1e802cce582d5c27a29bd3911cf
+#OR https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=xx
 
 #https://jsonviewer.stack.hu/
 #https://www.ventusky.com/#p=46.6;13.4;5
