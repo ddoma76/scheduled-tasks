@@ -6,10 +6,11 @@
 #https://console.twilio.com/?overrideTreatment=post-signup-dev&selectedTab=dynamic
 
 import requests
-import pandas as pd
+import sms_send
 
 import os
 api_key = os.environ.get("OWM_API_KEY")
+phone_no = os.environ.get("PHONE_NO")
 
 def get_coordinates(city):
     url = f"http://geocoding-api.open-meteo.com/v1/search?name={city}&count=1"
@@ -95,7 +96,8 @@ def check_weather_ids(ids):
     for i in ids:
         if int(i)<700:
             x="Bring an umbrella!"
-    print(x)
+    #print(x)
+    return x
 
 
 
@@ -103,4 +105,7 @@ def check_weather_ids(ids):
 #get_weather_meteo("Vienna")
 r=get_weather_openweathermap("London")
 ids=get_weather_ids(r)
-check_weather_ids(ids)
+text_to_send=check_weather_ids(ids)
+if text_to_send is not None:
+    client = sms_send.get_client_without_verify()
+    sms_send.send_message(client, text_to_send, phone_no)

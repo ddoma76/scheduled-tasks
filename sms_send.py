@@ -8,6 +8,7 @@ urllib3.disable_warnings()
 import os
 account_sid = os.environ.get("ACCOUNT_SID")
 auth_token = os.environ.get("AUTH_TOKEN")
+phone_no = os.environ.get("PHONE_NO")
 
 def easy_client():
   client = Client(account_sid, auth_token)
@@ -38,7 +39,6 @@ def send_message(client, message_txt, phone_to):
   )
   print(message.sid)
 
-phone_no = '+4367764737898'
 client = get_client_without_verify()
 send_message(client, 'Ahoy', phone_no)
 
